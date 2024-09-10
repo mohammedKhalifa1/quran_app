@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/class/color_app.dart';
+import 'package:quran_app/core/class/route_name.dart';
 
 import '../core/class/image_app.dart';
 import '../core/widget/custom_button.dart';
 import '../core/widget/text_failed.dart';
 
-class SingIn extends StatelessWidget {
+class SingIn extends StatefulWidget {
   const SingIn({super.key});
 
   @override
+  State<SingIn> createState() => _SingInState();
+}
+
+class _SingInState extends State<SingIn> {
+  TextEditingController? controllerText;
+  @override
+  void initState() {
+    super.initState();
+    controllerText = TextEditingController();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    TextEditingController controllerText = TextEditingController();
     return SafeArea(
       child: Scaffold(
         body: Stack(
@@ -32,10 +44,10 @@ class SingIn extends StatelessWidget {
                     "Asalamu Alaikum !!!",
                     style: TextStyle(color: Color(0xff9d1df2)),
                   ),
-                  CustomTextFailed(hint: "email", controller: controllerText),
+                  CustomTextFailed(hint: "email", controller: controllerText!),
                   CustomTextFailed(
                     hint: "password",
-                    controller: controllerText,
+                    controller: controllerText!,
                     passwordActive: true,
                   ),
                   CustomButton(
@@ -43,7 +55,9 @@ class SingIn extends StatelessWidget {
                       "signIn",
                       style: TextStyle(color: AppColor.title),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(AppRoute.homePage);
+                    },
                   )
                 ],
               ),

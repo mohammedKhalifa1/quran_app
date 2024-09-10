@@ -13,16 +13,16 @@ class InterFacePage extends StatefulWidget {
 }
 
 class _InterFacePageState extends State<InterFacePage> {
-  @override
-  void initState() {
-    Future.delayed(
-      const Duration(seconds: 3),
-      () {
-        Navigator.of(context).pushNamed(AppRoute.singIn);
-      },
-    );
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   Future.delayed(
+  //     Duration(seconds: 3),
+  //     () {
+  //       Navigator.of(context).pushNamed(AppRoute.singIn);
+  //     },
+  //   );
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +37,13 @@ recite once everyday""",
                 fontWeight: FontWeight.w700, color: AppColor.subTitle),
             textAlign: TextAlign.center,
           ),
+          actions: [
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(AppRoute.singIn);
+                },
+                child: Icon(Icons.arrow_forward_ios))
+          ],
         ),
         body: Stack(
           children: [
