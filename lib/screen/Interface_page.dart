@@ -18,7 +18,7 @@ class _InterFacePageState extends State<InterFacePage> {
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        Navigator.of(context).pushNamed(AppRoute.homePage);
+        Navigator.of(context).pushNamed(AppRoute.singIn);
       },
     );
     super.initState();
