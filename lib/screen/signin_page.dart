@@ -25,9 +25,10 @@ class _SingInState extends State<SingIn> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Stack(
+        body: Column(
           children: [
             Expanded(
+              flex: 3,
               child: Column(
                 children: [
                   SizedBox(
@@ -63,14 +64,13 @@ class _SingInState extends State<SingIn> {
               ),
             ),
             Expanded(
-              child: Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Image.asset(
+              flex: 1,
+              child: Container(
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(
                   AppImage.logo,
-                  height: MediaQuery.of(context).size.height / 2.5,
-                ),
+                ))),
               ),
             ),
           ],
@@ -79,3 +79,9 @@ class _SingInState extends State<SingIn> {
     );
   }
 }
+// Image.asset(
+//                   fit: BoxFit.fill,
+//                   AppImage.logo,
+//                   height: 100,
+//                   width: MediaQuery.of(context).size.width,
+//                 ),

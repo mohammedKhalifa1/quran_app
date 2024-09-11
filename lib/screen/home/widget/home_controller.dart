@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:quran_app/core/class/api_link.dart';
 import 'package:quran_app/core/class/curd.dart';
 import 'package:quran_app/core/class/status_requset.dart';
@@ -10,6 +11,7 @@ abstract class HomeController extends ChangeNotifier {
 }
 
 class HomeControllerImp extends HomeController {
+  TextEditingController searchController = TextEditingController();
   Curd curd = Curd();
   List<NameSuraMode> nameSura = [];
   StatusRequest statusRequest = StatusRequest.none;

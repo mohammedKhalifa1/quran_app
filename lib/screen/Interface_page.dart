@@ -42,7 +42,7 @@ recite once everyday""",
                 onPressed: () {
                   Navigator.of(context).pushNamed(AppRoute.singIn);
                 },
-                child: Icon(Icons.arrow_forward_ios))
+                child: const Icon(Icons.arrow_forward_ios))
           ],
         ),
         body: Stack(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quran_app/core/class/color_app.dart';
+import 'package:quran_app/core/widget/text_failed.dart';
 import 'package:quran_app/screen/home/widget/home_controller.dart';
 import '../../core/class/handling_data_view.dart';
 import 'widget/card_sura_name.dart';
@@ -43,12 +44,24 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             widget: SingleChildScrollView(
               child: Column(
                 children: [
-                  const Text(
-                    "Sura",
-                    style: TextStyle(
-                        color: AppColor.title,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const Text(
+                        "Sura",
+                        style: TextStyle(
+                            color: AppColor.title,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      ),
+                      // Container(
+                      //   padding: const EdgeInsets.all(10),
+                      //   child: CustomTextFailed(
+                      //       width: MediaQuery.of(context).size.width / 3,
+                      //       hint: "Search",
+                      //       controller: value.searchController),
+                      // ),
+                    ],
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
